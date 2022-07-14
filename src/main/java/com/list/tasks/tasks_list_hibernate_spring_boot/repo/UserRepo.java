@@ -13,4 +13,5 @@ public interface UserRepo extends JpaRepository<User, Integer> {
     @Query("update User t set t.name = ?1, t.username = ?2, t.password = ?3 where t.id = ?4")
     void updateUser(String name, String username, String password, Integer userId);
 
+    User findByUsername(String username);
 }
